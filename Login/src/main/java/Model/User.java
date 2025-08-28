@@ -81,6 +81,7 @@ public class User implements Serializable {
 		this.phone = phone;
 		this.createdDate = createdDate;
 	}
-	
-	public User() {}
+	public User() {
+        super();
+    }
 }

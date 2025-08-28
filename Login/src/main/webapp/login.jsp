@@ -1,52 +1,70 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<title>Login</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	rel="stylesheet">
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <form action="login" method="post" enctype="application/x-www-form-urlencoded" class="p-4 bg-white shadow rounded">
-                <h2 class="mb-4 text-center">Login</h2>
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-5">
+				<div class="card shadow">
+					<div class="card-body">
+						<h2 class="text-center mb-4 text-muted">Đăng Nhập Vào Hệ
+							Thống</h2>
 
-                <c:if test="${alert != null}">
-                    <h3 class="alert alert-danger">${alert}</h3>
-                </c:if>
+						<!-- Hiển thị thông báo lỗi -->
+						<c:if test="${alert != null}">
+							<div class="alert alert-danger text-center">${alert}</div>
+						</c:if>
 
-                <section class="mb-3">
-                    <label class="input login-input w-100">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa fa-user"></i></span>
-                            <input type="text" placeholder="Username" name="username" class="form-control" required>
-                        </div>
-                    </label>
-                </section>
+						<!-- Form login -->
+						<form action="login" method="post">
+							<div class="mb-3 input-group">
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" name="username"
+									placeholder="Tài khoản" required>
+							</div>
 
-                <section class="mb-3">
-                    <label class="input login-input w-100">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                            <input type="password" placeholder="Password" name="password" class="form-control" required>
-                        </div>
-                    </label>
-                </section>
+							<div class="mb-3 input-group">
+								<span class="input-group-text"><i class="fa fa-lock"></i></span>
+								<input type="password" class="form-control" name="password"
+									placeholder="Mật khẩu" required>
+							</div>
 
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
-        </div>
-    </div>
-</div>
+							<div
+								class="d-flex justify-content-between align-items-center mb-3">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="rememberMe"
+										name="remember"> <label class="form-check-label"
+										for="rememberMe">Nhớ tôi</label>
+								</div>
+								<a href="#">Quên mật khẩu?</a>
+							</div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+							<button type="submit" class="btn btn-primary w-100">Đăng
+								nhập</button>
+						</form>
+
+						<p class="text-center mt-3">
+							Nếu bạn chưa có tài khoản, hãy <a href="register.jsp">Đăng ký</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
